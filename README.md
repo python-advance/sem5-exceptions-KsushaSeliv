@@ -43,6 +43,7 @@ read('file1.json')
 
 <h1>Вариантная работа</h1>
 1.3. Создание программы для считывания данных формата CSV c использованием функционала модуля contextlib.
+
 ```python
 import requests
 from contextlib import closing
@@ -55,6 +56,7 @@ with closing(requests.get(url, stream=True)) as r:
     for row in reader:
         print row   
 ```
+
 #Установив stream=True в запросе GET, когда мы передаем r.iter_lines() в csv.reader (), мы передаем генератор в csv.reader (). Поступая #таким образом, мы разрешаем csv.reader () лениво перебирать по каждой строке ответа for row in reader .
 
 #Это позволяет избежать загрузки всего файла в память, прежде чем мы начнем его обрабатывать, что резко сократит объем памяти для #больших файлов .
